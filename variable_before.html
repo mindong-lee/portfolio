@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom properties</title>
+    <!-- https://developer.mozilla.org/en-US/docs/Web/CSS/--* -->
+    <style>
+      :root {
+        --font-size: 32px;
+        --base-space: 8px;
+        --background-color: thistle;
+        --text-color: whitesmoke;
+      }
+      .first-list {
+        background-color: var(--background-color);
+        color: var(--text-color);
+        margin-left: var(--base-space);
+        /* --font-size: 32px; */
+        font-size: var(--font-size);
+      }
+
+      .second-list {
+        background-color: var(--background-color);
+        color: var(--text-color);
+        margin-left: calc(var(--base-space) * 2);
+      }
+
+      @media screen and (max-width: 600px) {
+        :root {
+          --background-color: lightblue;
+          --text-color: blue;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="first-list">
+      <li>Orange</li>
+      <li>Apple</li>
+    </ul>
+    <ul class="second-list">
+      <li>Korea</li>
+      <li>Japan</li>
+      <li>China</li>
+    </ul>
+  </body>
+</html>
